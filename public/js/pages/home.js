@@ -5,7 +5,7 @@ export function renderHome(root) {
     <div class="page-kanji">寮</div>
     <div class="term-badge"><span class="dot"></span> toram-tools v2 · online</div>
     <h1>Toram Tools</h1>
-    <p class="lede">Kalkulator EXP, Main Quest, Spina, dan material untuk pemain Toram Online — semua jalan langsung di browser.</p>
+    <p class="lede">Kalkulator EXP, Main Quest, Spina, dan material untuk pemain Toram Online, stop hitung manual lagi:v</p>
 
     <div class="stat-grid">
       <a class="stat-card" href="#/xp">
@@ -21,7 +21,7 @@ export function renderHome(root) {
       <a class="stat-card" href="#/spina">
         <div class="k">Spina</div>
         <div class="t">Kalkulator Spina</div>
-        <div class="d">Konversi rate ke Spina berdasarkan nilai IDR.</div>
+        <div class="d">Konversi rate ke Spina berdasarkan nilai Rp.</div>
       </a>
       <a class="stat-card" href="#/mats">
         <div class="k">Mats</div>

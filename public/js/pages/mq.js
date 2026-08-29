@@ -73,7 +73,7 @@ export function renderMq(root) {
           <p>Level setelah skip: <strong id="skip-level">-</strong></p>
           <p>Jumlah bos di rentang ini: <strong class="mono" id="skip-bosses">-</strong></p>
           <p>Total Spina dibutuhkan: <strong class="mono" id="skip-spina">-</strong></p>
-          <p>Estimasi biaya (IDR): <strong class="mono" id="skip-idr">-</strong></p>
+          <p>Estimasi biaya (Rupiah): <strong class="mono" id="skip-idr">-</strong></p>
         </div>
       </div>
     </div>
@@ -116,7 +116,7 @@ export function renderMq(root) {
     $("skip-level").textContent = `${newLv} (${newLvP}%)`;
     $("skip-bosses").textContent = `${bossCount} bos`;
     $("skip-spina").textContent = `${formatNumber(spina)} Spina`;
-    $("skip-idr").textContent = rate > 0 ? `Rp${formatNumber(idr)}` : "— isi rate dulu";
+    $("skip-idr").textContent = rate > 0 ? `Rp${formatNumber(idr)}` : "isi ratenya dulu";
   }
 
   root.querySelectorAll("input, select").forEach((el) => el.addEventListener("input", evaluate));
