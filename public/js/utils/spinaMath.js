@@ -10,11 +10,12 @@ export function spinaToIDR(rate, spina) {
   return Math.round(spina / (rate * 10));
 }
 
-// Skip-MQ pricing rule: 1 chapter (bab) di-skip = 500.000 spina, dan
-// berlaku kelipatan linear per jumlah bab yang dilewati (termasuk bab akhir).
-export const SPINA_PER_CHAPTER = 500000;
+// Skip-MQ pricing rule: 1 quest/bos di dalam Main Quest = 500.000 spina.
+// Setiap bab (chapter) berisi beberapa bos — total biaya dihitung dari
+// jumlah bos yang ada di rentang bab yang dipilih (bab 1 s.d. bab
+// terakhir/"tamat", rentang bebas dipilih user), BUKAN dari jumlah bab-nya.
+export const SPINA_PER_BOSS = 500000;
 
-export function chaptersSkippedCost(fromChapter, toChapter) {
-  const count = toChapter - fromChapter + 1;
-  return Math.max(0, count) * SPINA_PER_CHAPTER;
+export function bossesSkippedCost(bossCount) {
+  return Math.max(0, bossCount) * SPINA_PER_BOSS;
 }

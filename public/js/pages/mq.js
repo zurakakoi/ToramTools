@@ -1,7 +1,7 @@
 import { buildChapters } from "../data/mqData.js";
 import { addXP, LV_CAP } from "../utils/xpMath.js";
 import { formatNumber } from "../utils/format.js";
-import { chaptersSkippedCost, spinaToIDR } from "../utils/spinaMath.js";
+import { bossesSkippedCost, spinaToIDR } from "../utils/spinaMath.js";
 
 const chapters = buildChapters();
 
@@ -15,6 +15,14 @@ function sumXp(fromChapter, toChapter) {
   return chapters
     .filter((c) => c.chapter >= fromChapter && c.chapter <= toChapter)
     .reduce((sum, c) => sum + c.totalXp, 0);
+}
+
+// Jumlah bos/quest di dalam rentang bab yang dipilih — ini basis biaya
+// Spina, bukan jumlah babnya.
+function countBosses(fromChapter, toChapter) {
+  return chapters
+    .filter((c) => c.chapter >= fromChapter && c.chapter <= toChapter)
+    .reduce((sum, c) => sum + c.quests.length, 0);
 }
 
 export function renderMq(root) {
@@ -57,12 +65,13 @@ export function renderMq(root) {
     <div class="tab-panel" id="panel-skip">
       <div class="card">
         <h2>Biaya Skip</h2>
-        <div class="card-sub">1 bab = 500.000 Spina, dihitung dari jumlah bab yang dilewati</div>
+        <div class="card-sub">500.000 Spina per bos, dihitung dari jumlah bos di dalam rentang bab yang dipilih</div>
         <label for="skip-rate">Rate (Contoh: 136)</label>
         <input type="number" id="skip-rate" placeholder="Rate (persen)">
         <div class="result" id="skip-result">
           <p>Total EXP yang didapat: <strong class="mono" id="skip-xp">-</strong></p>
           <p>Level setelah skip: <strong id="skip-level">-</strong></p>
+          <p>Jumlah bos di rentang ini: <strong class="mono" id="skip-bosses">-</strong></p>
           <p>Total Spina dibutuhkan: <strong class="mono" id="skip-spina">-</strong></p>
           <p>Estimasi biaya (IDR): <strong class="mono" id="skip-idr">-</strong></p>
         </div>
@@ -98,12 +107,14 @@ export function renderMq(root) {
     $("mq-level").textContent = `${newLv} (${newLvP}%)`;
 
     // Skip MQ tab
-    const spina = chaptersSkippedCost(from, to);
+    const bossCount = countBosses(from, to);
+    const spina = bossesSkippedCost(bossCount);
     const rate = parseFloat($("skip-rate").value) || 0;
     const idr = spinaToIDR(rate, spina);
 
     $("skip-xp").textContent = formatNumber(totalXp);
     $("skip-level").textContent = `${newLv} (${newLvP}%)`;
+    $("skip-bosses").textContent = `${bossCount} bos`;
     $("skip-spina").textContent = `${formatNumber(spina)} Spina`;
     $("skip-idr").textContent = rate > 0 ? `Rp${formatNumber(idr)}` : "— isi rate dulu";
   }
