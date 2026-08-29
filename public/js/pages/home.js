@@ -1,3 +1,5 @@
+import { showPromoModal } from "../components/promoModal.js";
+
 export function renderHome(root) {
   root.innerHTML = `
     <div class="page-kanji">寮</div>
@@ -28,4 +30,12 @@ export function renderHome(root) {
       </a>
     </div>
   `;
+
+  showPromoModal({
+  badge: "Fhmii Store",
+  title: "Butuh Aplikasi Premium?",
+  message: "Temukan berbagai aplikasi premium untuk kebutuhanmu di Fhmii Store. Pilihan lengkap, harga terjangkau, dan proses pemesanan yang mudah.",
+  ctaLabel: "Kunjungi Fhmii Store",
+  ctaUrl: "https://fhmiistore.my.id",
+});
 }

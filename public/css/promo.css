@@ -1,0 +1,101 @@
+.promo-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.55);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+.promo-overlay.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.promo-card {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 24px 22px;
+  text-align: center;
+  transform: translateY(14px) scale(0.98);
+  transition: transform 0.25s ease;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+.promo-overlay.visible .promo-card {
+  transform: translateY(0) scale(1);
+}
+
+.promo-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+.promo-close:hover { color: var(--accent); }
+
+.promo-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 20px;
+  padding: 3px 10px;
+  margin-bottom: 14px;
+}
+
+.promo-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.promo-card p {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  margin-bottom: 20px;
+}
+
+.promo-cta {
+  display: inline-block;
+  width: 100%;
+  padding: 12px;
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--radius);
+  transition: background 0.2s ease;
+}
+[data-theme="japanese"] .promo-cta { color: var(--text); }
+.promo-cta:hover { background: var(--accent-strong); }
+
+.promo-timer {
+  margin-top: 16px;
+  height: 3px;
+  background: var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.promo-timer-bar {
+  height: 100%;
+  width: 100%;
+  background: var(--accent-2);
+  transform-origin: left;
+  transform: scaleX(1);
+  transition: transform linear;
+}

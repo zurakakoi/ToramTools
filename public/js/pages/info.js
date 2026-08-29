@@ -26,13 +26,13 @@ export function renderInfo(root) {
       </p>
     </div>
 
-    <div class="card">
-      <h2>Terima Kasih</h2>
-      <p style="color: var(--text-muted);">
-        Proyek ini dikerjakan oleh <strong>Zura OFC</strong> dengan bantuan <strong>Claude AI</strong>
-        sebagai co-creator yang memberikan kode, inspirasi, dan optimasi. Semua hak cipta dan
-        penghargaan tetap milik masing-masing pemilik game dan platform.
-      </p>
-    </div>
-  `;
-}
+   <div class="card">
+  <h2>Terima Kasih</h2>
+  <p style="color: var(--text-muted);">
+    Proyek ini dikerjakan oleh <strong>Zura OFC (Fhmii)</strong>.
+    Terima kasih kepada semua player toram online yang sudah membantu memberikan informasi mengenai game toram dan terimakasih juga kepada teman-teman saya yang selalu mendukung pengembangan website ini.<strong>Toram Online</strong>,
+    serta situs <strong>toramtoools.github.io</strong> yang telah menyediakan
+    daftar exp yang sangat membantu dalam pengembangan aplikasi ini.
+    Semua hak cipta dan penghargaan tetap milik masing-masing pemilik game dan platform.
+  </p>
+</div>
