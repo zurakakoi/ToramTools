@@ -36,3 +36,5 @@ export function renderInfo(root) {
     Semua hak cipta dan penghargaan tetap milik masing-masing pemilik game dan platform.
   </p>
 </div>
+  `;
+}
