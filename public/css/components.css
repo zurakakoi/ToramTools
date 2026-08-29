@@ -1,0 +1,155 @@
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.card h2 {
+  font-size: 1.15rem;
+  color: var(--accent-2);
+  margin-bottom: 4px;
+}
+.card .card-sub {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 18px;
+}
+
+label {
+  display: block;
+  margin: 16px 0 6px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+label:first-of-type { margin-top: 0; }
+
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 11px 12px;
+  font-size: 1rem;
+  font-family: var(--font-body);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-alt);
+  color: var(--text);
+}
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 25%, transparent);
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 16px 0;
+  font-size: 0.9rem;
+}
+.checkbox-row input { width: auto; }
+
+.btn {
+  display: inline-block;
+  width: 100%;
+  margin-top: 20px;
+  padding: 13px;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: var(--font-body);
+  color: var(--bg);
+  background: var(--accent);
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.2s ease;
+}
+[data-theme="japanese"] .btn { color: var(--text); }
+.btn:hover { background: var(--accent-strong); transform: translateY(-1px); }
+
+.result {
+  margin-top: 20px;
+  padding: 16px 18px;
+  background: var(--bg-alt);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+  font-size: 0.98rem;
+  animation: fadeIn 0.3s ease;
+}
+.result.hidden { display: none; }
+.result strong { color: var(--accent-2); }
+.result .mono { font-family: var(--font-mono); }
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* Tabs (used by MQ Calculator: "MQ Calculator" vs "Skip MQ pakai Spina") */
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+.tab-btn {
+  flex: 1;
+  padding: 12px 10px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.tab-btn:hover { color: var(--text); }
+.tab-btn.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+.tab-panel { display: none; }
+.tab-panel.active { display: block; animation: fadeIn 0.25s ease; }
+
+/* Result table (spam-diary breakdown) */
+.result-table { margin-top: 20px; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+.result-table .row {
+  display: grid;
+  grid-template-columns: 50px 1fr 110px;
+  gap: 8px;
+  padding: 9px 14px;
+  font-size: 0.85rem;
+  border-bottom: 1px solid var(--border);
+}
+.result-table .row:last-child { border-bottom: none; }
+.result-table .row.head {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  background: var(--bg-alt);
+}
+
+/* Stat pills (home page) */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 14px;
+  margin: 28px 0;
+}
+.stat-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  text-decoration: none;
+  color: var(--text);
+  transition: transform 0.15s ease, border-color 0.2s ease;
+}
+.stat-card:hover { transform: translateY(-2px); border-color: var(--accent); }
+.stat-card .k { font-family: var(--font-mono); font-size: 0.7rem; color: var(--accent-2); text-transform: uppercase; }
+.stat-card .t { font-family: var(--font-display); font-size: 1.05rem; margin-top: 6px; }
+.stat-card .d { font-size: 0.82rem; color: var(--text-muted); margin-top: 4px; }

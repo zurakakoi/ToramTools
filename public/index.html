@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="japanese">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Toram Tools - Kalkulator Toram Online</title>
+  <meta name="description" content="Kalkulator EXP, Main Quest, Spina, dan material untuk pemain Toram Online. Cepat, akurat, langsung di browser." />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Toram Tools" />
+  <meta property="og:title" content="Toram Tools - Kalkulator Toram Online" />
+  <meta property="og:description" content="Kalkulator EXP, Main Quest, Spina, dan material untuk pemain Toram Online. Cepat, akurat, langsung di browser." />
+  <meta property="og:image" content="/assets/img/og-banner.png" />
+  <meta property="og:url" content="/" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Toram Tools - Kalkulator Toram Online" />
+  <meta name="twitter:description" content="Kalkulator EXP, Main Quest, Spina, dan material untuk pemain Toram Online." />
+  <meta name="twitter:image" content="/assets/img/og-banner.png" />
+
+  <link rel="icon" type="image/png" href="/assets/img/favicon.png" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Space+Mono:wght@400;700&family=Sora:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/japanese-fx.css">
+</head>
+<body>
+
+  <!-- Japanese-theme-only decorative layer (hidden via CSS on other themes) -->
+  <div class="kanji-bg" id="kanjiBg" aria-hidden="true">冒</div>
+  <div class="noise-fx" aria-hidden="true"></div>
+
+  <nav class="topnav">
+    <a href="#/" class="brand">
+      <span class="brand-mark">寮</span>
+      <span class="brand-text">Toram <span class="accent">Tools</span></span>
+    </a>
+
+    <div class="nav-right">
+      <ul id="navMenu" class="nav-links">
+        <li><a href="#/" data-route="/">Home</a></li>
+        <li><a href="#/xp" data-route="/xp">Exp Calc</a></li>
+        <li><a href="#/mq" data-route="/mq">MQ / Skip Spina</a></li>
+        <li><a href="#/spina" data-route="/spina">Spina</a></li>
+        <li><a href="#/mats" data-route="/mats">Mats</a></li>
+        <li><a href="#/info" data-route="/info">Info</a></li>
+      </ul>
+
+      <div class="theme-select">
+        <label for="themePicker" class="sr-only">Pilih tema</label>
+        <select id="themePicker">
+          <option value="japanese">Japanese</option>
+          <option value="purple">Dark Purple</option>
+          <option value="light">Light Blue</option>
+        </select>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main id="app" class="page"></main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Toram Tools. All rights reserved. | Developed by Zura</p>
+    <div class="socials">
+      <a href="https://www.instagram.com/zuraofc_?igsh=MXhkdHh0Z2MwMmE1ag==" title="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+      <a href="https://whatsapp.com/channel/0029VaFqhZ06GcGB1H7hYr2F" title="WhatsApp" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://youtube.com/@zuraofc?si=9QGtDrjD6popstUE" title="YouTube" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
+    </div>
+  </footer>
+
+  <script type="module" src="/js/app.js"></script>
+</body>
+</html>
